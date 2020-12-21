@@ -64,7 +64,7 @@ function search_warranties($id, $warranty_id, $product_name, $company_name, $sta
 				$date_range = "+".$date_range;
 			$start = date("Y-m-d", strtotime("today"));
 			$end = date("Y-m-d", strtotime($date_range . " days"));
-			$search_fields .= " end_date between ".$start." and ".$end." ";
+			$search_fields .= " end_date between '".$start."' and '".$end."' ";
 		}
 	}
 	$and = "AND";

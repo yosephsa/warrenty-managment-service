@@ -114,7 +114,7 @@
 											<text class="title"> <a href="search.php?warranty_id='.$row['warranty_id'].'" class="'.$title_css.'">'.$row['product_name'].'</a></text>
 											<text class="date">'.$row['company_name'].'</text>
 										</div><br/><hr/><br/>
-										<input type="button" onClick="location.href=\'edit_warranty.php?id='.$row['id'].'\'")" value="دل" />
+										<input type="button" onClick="location.href=\'edit_warranty.php?id='.$row['id'].'\'")" value="عدل" />
 										<div class="details"><br/>
 											<p style="float: right;"><text style="float: right">:الحاله </text>
 												<text class="'.$title_css.'">'.strtoupper($title_css).'</text>

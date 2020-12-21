@@ -15,7 +15,7 @@
 		</tr>
 	</table>
 	<ul>
-		<li><a href="index.php">:الرئيسية &nbsp;</a></li>
+		<li><a href="index.php">الرئيسية &nbsp;</a></li>
 		<li><a href="index.php?status=active">مفعول &nbsp;</a></li>
 		<li><a href="index.php?date_range=90">قريب الإنتهاء &nbsp;</a></li>
 		<li><a href="index.php?status=expired">إنتهى &nbsp;</a></li>

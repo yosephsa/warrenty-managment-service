@@ -184,7 +184,7 @@
 											</table>
 										<p><label style="float: right;">اسم المستخدم</label> <input type="text" name="create_account_username" value="" /></p>
 										<p><label style="float: right;">البريد الكتروني</label><input type="text" name="create_account_email" value="" /></p>
-										<input type="hidden" name="edit_account_birth_date" id="edit_account_birth_date" value=""/>
+										<input type="hidden" name="edit_account_birth_date" id="edit_account_birth_date" value="00-00-0000"/>
 										<p>
 											<label style="float: right;">الاذونات</label> 
 											<select name="create_account_permission">

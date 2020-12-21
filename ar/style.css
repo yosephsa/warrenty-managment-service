@@ -269,7 +269,8 @@ body {
     color: #722f23;
 }
 .title a.canceled {
-	color: red;
+	color: brown;
+	text-decoration: line-through;
 }
 /** Entry Content CSS Code*/
 .entry {

@@ -145,7 +145,7 @@
 											</table>
 										<p>Username: <input type="text" name="edit_account_username" value="'.$result_arr['username'].'" readonly/></p>
 										<p>Email: <input type="text" name="edit_account_email" value="'.$result_arr['email'].'" '.$editibility.'/></p>
-										<p>Birth date: <input type="text" name="edit_account_birth_date" id="edit_account_birth_date" value="'.date($prefs['date_format'], strtotime($result_arr['birth_date'])).'" '.$editibility.'/></p>
+										<p><input type="hidden" name="edit_account_birth_date" id="edit_account_birth_date" value="'.date($prefs['date_format'], strtotime($result_arr['birth_date'])).'" '.$editibility.'/></p>
 										<p>
 											Permission: 
 											<select name="edit_account_permission">
@@ -184,7 +184,7 @@
 											</table>
 										<p>Username: <input type="text" name="create_account_username" value="" /></p>
 										<p>Email: <input type="text" name="create_account_email" value="" /></p>
-										<p>Birth date: <input type="text" name="create_account_birth_date" id="create_account_birth_date"/></p>
+										<p><input type="hidden" name="create_account_birth_date" id="create_account_birth_date" value="00-00-0000"/></p>
 										<p>
 											Permission: 
 											<select name="create_account_permission">

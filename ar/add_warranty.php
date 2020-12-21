@@ -121,30 +121,9 @@
 							
 							//authenticate username and password.
 							if(isset($_SESSION['status']) && $_SESSION['status'] == 1) {
-								//Creating warranty query string
-								$warranty_query = 'INSERT INTO '. $prefs["mysql_table_warranties"] .'
-									(product_name, company_name, created_by, creation_date)
-									VALUES 
-									  ( 
-										"'.bhp($link, $_POST['product_name']).'", 
-										"'.bhp($link, $_POST['company_name']).'",
-										"' . $_SESSION['username'] . '",
-										"'.date("Y-m-d", strtotime("today")).'" )
-								';//echo htmlentities($warranty_query) . '<br/><br/>';
-								
-								//Sending warranty query.
-								$update_result = db_query($link, $_SESSION['username'], $warranty_query);
-								if(!$update_result){
-									echo "<script type='text/javascript'>alert('Could not create warranty.')</script>
-									";
-									goto end_if_007;
-								}
-								
 								//Retrieving warranty id
 								$result = db_query($link, $_SESSION['username'], 'SELECT max(warranty_id) FROM '.$prefs['mysql_table_warranties'].'');
 								$warranty_id = mysqli_fetch_array($result)['max(warranty_id)'] + 1;
-								if($result == false)
-									echo '<script>alert("error")</script>';
 								$uploadOk = 1;
 								$file_dir = "/uploads/" . basename($_FILES["fileToUpload"]["name"]);
 								$target_file = "C://xampp/htdocs/" . $file_dir;
@@ -177,6 +156,8 @@
 										
 										if($_FILES["fileToUpload"]['name'] != "") {
 											$entry_query .= ', "'.$file_dir.'"';
+										} else {
+											$entry_query .= ', ""';
 										}
 										$entry_query.= ')';
 								//echo $entry_query . '<br/><br/>';

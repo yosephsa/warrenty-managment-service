@@ -200,6 +200,8 @@
 										}
 										if($_FILES["fileToUpload"]['name'] != "") {
 											$query .= ':'.$file_dir;
+										} else {
+											$query .= ', ""';
 										}
 										
 										$query .= '")';
