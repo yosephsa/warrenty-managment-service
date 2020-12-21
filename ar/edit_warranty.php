@@ -232,7 +232,7 @@
 										<br/><br/><br/><br/><br/><p style="float: right;"> حمل ملفات: </p> <div style="padding-left: 2em">
 											<div style="float: right;"><br/><br/><br/><input style="float: right;" type="file" name="fileToUpload" id="fileToUpload"/></div>
 										</div>
-										<div style="float: left;"><br/><br/><br/><br/><br/><input style="float: right;" type="submit" value="Save" name="save"/></div>
+										<div style="float: left;"><br/><br/><br/><br/><br/><input style="float: right;" type="submit" value="إحفض" name="save"/></div>
 										
 										
 											
