@@ -94,7 +94,7 @@
 								<div class="entry">
 									<div class="content">
 										<div class="header">
-											<text class="title"> <a href="/search.php?warranty_id='.$warranty['warranty_id'].'" class="'.$title_css.'">'.$warranty['product_name'].'</a></text>
+											<text class="title"> <a href="search.php?warranty_id='.$warranty['warranty_id'].'" class="'.$title_css.'">'.$warranty['product_name'].'</a></text>
 											<text class="date">'.$warranty['company_name'].'</text>
 										</div><br/><hr/><br/>
 										<div class="details"><br/>

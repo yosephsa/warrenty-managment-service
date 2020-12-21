@@ -111,7 +111,7 @@
 								<div class="entry">
 									<div class="content">
 										<div class="header">
-											<text class="title"> <a href="/search.php?warranty_id='.$row['warranty_id'].'" class="'.$title_css.'">'.$row['product_name'].'</a></text>
+											<text class="title"> <a href="search.php?warranty_id='.$row['warranty_id'].'" class="'.$title_css.'">'.$row['product_name'].'</a></text>
 											<text class="date">'.$row['company_name'].'</text>
 										</div>
 										<hr/>
