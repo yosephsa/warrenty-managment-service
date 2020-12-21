@@ -1,0 +1,47 @@
+-- phpMiniAdmin dump 1.9.150108
+-- Datetime: 2016-07-13 07:05:56
+-- Host: 
+-- Database: csc_it_wms
+
+/*!40030 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) DEFAULT NULL,
+  `user_name` varchar(50) DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
+  `creation_date` date DEFAULT NULL,
+  `pass_value` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+DROP TABLE IF EXISTS `warranties`;
+CREATE TABLE `warranties` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'active',
+  `product_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `company_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `price` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `notes` varchar(3000) COLLATE utf8_unicode_ci NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `created_by` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Unspecified',
+  `creation_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*!40000 ALTER TABLE `warranties` DISABLE KEYS */;
+INSERT INTO `warranties` VALUES ('1','expired','Test Product 2 Warranty','Test Company','$150','This is an expired test warranty.','2016-05-12','2016-06-30','Yoseph S. Alabdulwahab','2016-05-12'),('2','canceled','Test Product 3 Warranty','Test Company','$389','This is an canceled test warranty.','2016-07-12','2016-07-30','Yoseph S. Alabdulwahab','2016-07-12'),('3','active','Test Product 1 Warranty','Test Company','$200','This is an active test warranty.','2016-07-12','2016-07-30','Yoseph S. Alabdulwahab','2016-07-12'),('6','active','Test Product 4 Warranty','Test Company','$3,000','This is an active test warranty that will not expire for a long time','2014-07-12','2017-07-12','Yoseph S. Alabdulwahab','2014-07-13');
+/*!40000 ALTER TABLE `warranties` ENABLE KEYS */;
+
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+
+
+-- phpMiniAdmin dump end

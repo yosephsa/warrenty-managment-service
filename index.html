@@ -1,0 +1,30 @@
+<script>
+	var urlParam = function(name, w){
+		w = w || window;
+		var rx = new RegExp('[\&|\?]'+name+'=([^\&\#]+)'),
+			val = w.location.search.match(rx);
+		return !val ? '':val[1];
+	}
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length,c.length);
+			}
+		}
+		return "";
+	}
+	if(urlParam('lang') != "") {
+		document.cookie = "lang=" + urlParam('lang');
+		//alert("URL LANG = "+urlParam('lang') + " Cookie = " + getCookie("lang"));
+	}
+	if(getCookie("lang") == "en")
+		window.location.assign("/"+getCookie("lang"));
+	else
+		window.location.assign("/ar");
+</script>
