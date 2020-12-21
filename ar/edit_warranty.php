@@ -200,7 +200,7 @@
 													<option value="canceled" '.@$canceled.'>Canceled</option>
 												</select>
 											</p><br/><br/>
-											<p style="float: right;"><div id="pending_notes"><p>Pending Notes:</p> <textarea name="pending_notes" class="pending_notes">'.$warranty['pending_notes'].'</textarea></div></p><br/>
+											<p style="float: right;"><div id="pending_notes"><p style="padding-left: 80%">:ملاحضات الحالة</p> <textarea name="pending_notes" class="pending_notes">'.$warranty['pending_notes'].'</textarea></div></p><br/>
 											<p style="float: right;"><div id="contact_info"><p style="float: right;">:معلمات التواصل</p> <br/><br/><br/><textarea name="contact_info" class="contact_info">'.$warranty['contact_info'].'</textarea></div></p><br/>
 											<p style="float: right;"><div class="notes"><p style="float: right;">:ملحظات</p><br/><br/><br/><textarea name="notes" id="notes" class="notes">'.$warranty['notes'].'</textarea></div></p><br/>
 										';

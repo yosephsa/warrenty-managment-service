@@ -52,8 +52,8 @@
 					include_once 'login.php';
 					?>
 					<div class="actions">
-						<input type="submit" value="Create" name="create"/>
-						<input type="submit" value="Back" name="back"/>
+						<input type="submit" value="إحفض" name="save"/>
+						<input type="submit" value="ارجع" name="back"/>
 					</div>
 				</div>
 				<div class="body_content">
@@ -94,13 +94,13 @@
 								<div class="entry">
 									<div class="content">
 										<div class="header">
-											<text class="title"> <a href="/search.php?warranty_id='.$warranty['warranty_id'].'" class="'.$title_css.'">'.$warranty['product_name'].'</a></text>
+											<text class="title"> <a href="search.php?warranty_id='.$warranty['warranty_id'].'" class="'.$title_css.'">'.$warranty['product_name'].'</a></text>
 											<text class="date">'.$warranty['company_name'].'</text>
 										</div><br/><hr/><br/>
 										<div class="details"><br/>
-											<p>Warranty Period: <input type="text" name="start_date" id="start_date" value="'.date($prefs['date_format'], strtotime($warranty['end_date'])).'"/> to <input type="text" name="end_date" id="end_date" value="'.date($prefs['date_format'], strtotime("+30 days ", strtotime($warranty['end_date']))).'"/></p><br/>
-											<p>Price: <input type="text" name="price" value="'.$warranty['price'].'"></input></p><br/>
-											<p>Status: 
+											<p style="float: right;"><text style="float: right">:المدة </text> <input type="text" name="start_date" id="start_date" value="'.date($prefs['date_format'], strtotime($warranty['end_date'])).'"/> to <input type="text" name="end_date" id="end_date" value="'.date($prefs['date_format'], strtotime("+30 days ", strtotime($warranty['end_date']))).'"/></p><br/>
+											<br/><br/><br/><p style="float: right;"><text style="float: right">:السعر </text>  <input type="text" name="price" value="'.$warranty['price'].'"></input></p><br/>
+											<br/><br/><br/><p style="float: right;"><text style="float: right">:الحاله </text>
 												<select name="status" id="status">
 													<option value="active" selected>Active</option>
 													<option value="pending">Pending</option>
@@ -108,9 +108,9 @@
 													<option value="canceled">Canceled</option>
 												</select>
 											</p>
-											<p><div id="pending_notes"><p>Pending Notes:</p> <textarea name="pending_notes" class="pending_notes">'.$warranty['pending_notes'].'</textarea></div></p><br/>
-											<div id="contact_info"><p>Contact Info:</p> <textarea name="contact_info" class="contact_info">'.$warranty['contact_info'].'</textarea></div>
-											<p>Notes: <div class="notes"><textarea name="notes" id="notes" class="notes">'.$warranty['notes'].'</textarea></div></p><br/>
+											<br/><br/><br/><br/><p style="float: right;"><div id="pending_notes"><p style="padding-left: 80%">:ملاحضات الحالة</p><textarea name="pending_notes" class="pending_notes">'.$warranty['pending_notes'].'</textarea></div></p><br/>
+											<p style="float: right;"><div id="contact_info"><p style="float: right;">:معلمات التواصل</p> <textarea name="contact_info" class="contact_info">'.$warranty['contact_info'].'</textarea></div>
+											<p style="float: right;"><div class="notes"><p style="float: right;">:ملحظات</p><br/><br/><br/><textarea name="notes" id="notes" class="notes">'.$warranty['notes'].'</textarea></div></p><br/>
 										';
 										if (strpos($warranty['files'], ":") == 0)
 											$warranty['files'] = substr($warranty['files'], 1);
@@ -136,14 +136,13 @@
 										}
 										
 										echo '
-										<p> Upload File: </p> <div style="padding-left: 2em">
-											<input type="file" name="fileToUpload" id="fileToUpload"/>
+										
+										
+										<br/><br/><br/><br/><br/><p style="float: right;"> حمل ملفات: </p> <div style="padding-left: 2em">
+											<div style="float: right;"><br/><br/><br/><input style="float: right;" type="file" name="fileToUpload" id="fileToUpload"/></div>
 										</div>
-										</div>
-										<div class="actions" style="padding-top: 1em;">
-											<hr/><br/>
-											<input type="submit" value="Create" name="create"/>
-										</div>
+										<div style="float: left;"><br/><br/><br/><br/><br/><input style="float: right;" type="submit" value="Save" name="save"/></div>
+										
 								</div>
 								<script>tinymce.init({ selector:\'textarea\' });</script>
 							';

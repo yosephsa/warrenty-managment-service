@@ -42,7 +42,7 @@
 					<div class="entry">
 						<div class="content">
 							<div class="header">
-								<div class="title"><p>الاعدادات </p></div>
+								<div class="title"><p>الإعدادات </p></div>
 							</div>
 							<hr/>
 							<div class="details"><br/>
@@ -74,11 +74,11 @@
 									echo '
 										<table style="width:100%">
 											<tr>
-												<th style="font-weight: bold;">الأسم</th>
+												<th style="font-weight: bold;">الاسم</th>
 												<th style="font-weight: bold;">:اسم المستخدم</th>
-												<th style="font-weight: bold;">الاذونات</th>
+												<th style="font-weight: bold;">الأذونات</th>
 												<th style="font-weight: bold;">البريد الكتروني</th>
-												<th style="font-weight: bold;">تريخ الانشاء</th>
+												<th style="font-weight: bold;">تريخ الإنشاء</th>
 											</tr>
 									';
 									while($row = mysqli_fetch_array($result)) {
@@ -120,7 +120,7 @@
 										$editibility = "";
 										$password_fields = '
 											<p><label style="float: right;">كلمة المرور</label> <input type="password" name="edit_account_password" value=""/></p>
-											<p><label style="float: right;">اعادة كلمت المرور</label> <input type="password" name="edit_account_password_retype" value=""/></p>
+											<p><label style="float: right;">إعادة كلمت المرور</label> <input type="password" name="edit_account_password_retype" value=""/></p>
 										';
 									}
 									$admin_selected = "";
@@ -147,13 +147,13 @@
 										<p><label style="float: right;">البريد الكتروني</label> <input type="text" name="edit_account_email" value="'.$result_arr['email'].'" '.$editibility.'/></p>
 										<input type="hidden" name="edit_account_birth_date" id="edit_account_birth_date" value="'.date($prefs['date_format'], strtotime($result_arr['birth_date'])).'" '.$editibility.'/>
 										<p>
-											<label style="float: right;">الاذونات</label> 
+											<label style="float: right;">الأذونات</label> 
 											<select name="edit_account_permission">
 												<option value="user">Default User</option>
 												<option value="admin" '.$admin_selected.'>Admin</option>
 											</select>
 										</p>
-										<p><label style="float: right;">اشار بريد الكتروني</label> <input type="checkbox" name="edit_account_notify" '.$notify_checked.'/></p>
+										<p><label style="float: right;">إشارة بريد الكتروني</label> <input type="checkbox" name="edit_account_notify" '.$notify_checked.'/></p>
 										'.$password_fields.'
 										
 									';
@@ -186,20 +186,20 @@
 										<p><label style="float: right;">البريد الكتروني</label><input type="text" name="create_account_email" value="" /></p>
 										<input type="hidden" name="edit_account_birth_date" id="edit_account_birth_date" value="00-00-0000"/>
 										<p>
-											<label style="float: right;">الاذونات</label> 
+											<label style="float: right;">الأذونات</label> 
 											<select name="create_account_permission">
 												<option value="user">Default User</option>
 												<option value="admin">Admin</option>
 											</select>
 										</p>
-										<p><label style="float: right;">اشار بريد الكتروني</label> <input type="checkbox" name="create_account_notify"/></p>
+										<p><label style="float: right;">إشارة بريد الكتروني</label> <input type="checkbox" name="create_account_notify"/></p>
 										<p><label style="float: right;">كلمة المرور</label> <input type="password" name="create_account_password" value=""/></p>
-										<p><label style="float: right;">اعادة كلمت المرور</label> <input type="password" name="create_account_password_retype" value=""/></p>
+										<p><label style="float: right;">إعادة كلمت المرور</label> <input type="password" name="create_account_password_retype" value=""/></p>
 										
 									';
 									
 									echo '<br/><hr/><br/>
-											<input type="submit" value="انشاء" name="create_account_submit"/>
+											<input type="submit" value="إنشاء" name="create_account_submit"/>
 											<input type="submit" value="رجع" name="back"/>';
 									end_if_103:
 								} else if(isset($_POST['remove_account'])) {
@@ -222,13 +222,13 @@
 									//Print info to page
 									echo '
 										<p>
-										<text style="font-size: 1.2em;">هل انت متأكد من ازالة هذا الحساب؟</text><br/>
+										<text style="font-size: 1.2em;">هل انت متأكد من إزالةة هذا الحساب؟</text><br/>
 										</p>
-										<p><label style="float: right;">الرجاء اعادة كتابت اسم المستخدم</label> <input type="hidden" name="remove_account_username" value="'.bbhp($_POST['remove_account_username']).'" readonly/> <input type="text" name="remove_account_verify_username"/></p>
+										<p><label style="float: right;">الرجاء إعادة كتابت اسم المستخدم</label> <input type="hidden" name="remove_account_username" value="'.bbhp($_POST['remove_account_username']).'" readonly/> <input type="text" name="remove_account_verify_username"/></p>
 										';
 									
 									echo '	<br/><hr/><br/>
-											<input type="submit" value="ازال" name="remove_account_submit" style="margin:0.6";/>
+											<input type="submit" value="إزالة" name="remove_account_submit" style="margin:0.6";/>
 											<input type="submit" value="رجع" name="remove_account_cancel"/>';
 									end_if_104:
 								} else if(isset($_POST['remove_account_submit'])) {
@@ -415,8 +415,8 @@
 									echo '
 									<p><label style="float: right;"> :قائمة الحسابات </label><input type="submit" value="أذهب" name="list_all_accounts"></p>
 									<p><label style="float: right;"> :تعديل الحساب </label><input type="submit" value="أذهب" name="edit_account"/><input type="text" value="" name="edit_account_username"/></p>
-									<p><label style="float: right;"> :انشاء حساب جديد </label><input type="submit" value="أذهب" name="create_account"/></p>
-									<p><label style="float: right;"> :ازالة الحساب </label><input type="submit" value="أذهب" name="remove_account"/><input type="text" value="" name="remove_account_username"/></p>
+									<p><label style="float: right;"> :إنشاء حساب جديد </label><input type="submit" value="أذهب" name="create_account"/></p>
+									<p><label style="float: right;"> :إزالة الحساب </label><input type="submit" value="أذهب" name="remove_account"/><input type="text" value="" name="remove_account_username"/></p>
 									';
 								}
 								mysqli_close($link);

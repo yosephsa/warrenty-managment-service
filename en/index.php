@@ -38,7 +38,7 @@
 				</table>
 				<div class="submission">
 					<label>Show</label>
-					<input type="text" name="result_amount" id="result_amount" value="20" style="width: 2em;"/> 
+					<input type="text" name="result_amount" id="result_amount" value="30" style="width: 2em;"/> 
 					<input type="submit" name="submit" value="submit" onClick="location.reload(false);" id="submit" />
 				</div>
 			</form>
@@ -72,7 +72,7 @@
 						search($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by, $result_amount);
 						
 					} else {
-						$result_amount = 20;
+						$result_amount = 30;
 						
 						$id = "";
 						$warranty_id = "";

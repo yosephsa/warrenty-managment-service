@@ -120,7 +120,7 @@
 												<text class="'.$title_css.'">'.strtoupper($title_css).'</text>
 											</p><br/><br/>
 											<p style="float: right;"><text style="float: right">:المدة </text> <input style="background: lightgray;" type="text" name="end_date" id="end_date" value="'.date($prefs['date_format'], strtotime($row['end_date'])).'"readonly/> إلا <input style="background: lightgray;" type="text" name="start_date" id="start_date" value="'.date($prefs['date_format'], strtotime($row['start_date'])).'"readonly/></p><br/>
-											<br/><br/><br/><p style="float: right;"><text style="float: right">:المبلع </text> <input style="background: lightgray;" type="text" name="price" value="'.$row['price'].'"></input></p><br/>
+											<br/><br/><br/><p style="float: right;"><text style="float: right">:المبلغ </text> <input style="background: lightgray;" type="text" name="price" value="'.$row['price'].'"></input></p><br/>
 											<br/><br/><br/>
 											<p style="float: right;"><div id="pending_notes"><p>Pending Notes:</p> <text name="pending_notes" class="pending_notes">'.$row['pending_notes'].'</text></div></p><br/>
 											<p style="float: right;"><div id="contact_info"><p style="float: right;">:معلمات التواصل</p> <br/><br/><br/><text name="contact_info" class="contact_info">'.$row['contact_info'].'</text></div></p><br/>

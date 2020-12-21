@@ -1,5 +1,5 @@
 <?php
-
+	notifyBrowser();
 	$print_message = updateEntries();
 	$print_message .= notifyOfExperation();
 	if(isset($_GET['display']) && $_GET['display'] == 'true') {
@@ -151,5 +151,56 @@
 		  echo "Message sent!";
 		}
 		return $print_message;
+	}
+	function notifyBrowser() {
+		//Include necessary files.
+		include_once 'PHPMailer/PHPMailerAutoload.php';
+		include_once 'mysql_connect.php';
+		include_once 'constants.php';
+		$prefs = get_preferences();
+		
+		$nd_start = date("Y-m-d", strtotime("today"));
+		$nd_end = date("Y-m-d", strtotime("+90 days"));
+		
+		
+		//Retrives warranties and emailers list.
+		$query_warranties = 'SELECT * FROM '.$prefs['mysql_table_warranties'].' WHERE status="active" AND end_date between "'.$nd_start.'" AND "'.$nd_end.'"';
+		$query_notify = 'SELECT * FROM '.$prefs['mysql_table_users'].' WHERE notify=1';
+		$link = connectDatabase();
+		$result_warranties = db_query($link, "Periodic Updater", $query_warranties);
+		$result_notify = db_query($link, "Periodic Updater", $query_notify);
+		if(!$result_notify) {
+			return $print_message;
+		}
+		if(!$result_warranties) {
+			echo 'no warranties';
+			return;
+		}
+		//Creating necessary emailing fields.
+		$subject = "Some warranties are expiring soon.";
+		$message = "";
+		$i = 0;
+		
+		
+		//Composing email body.
+		$message .= '
+			<p>Dear Admin,</p>
+			<p>The following warranties are ending soon.</p>
+			<ul>
+			';
+		$i = 0;
+		while($row = mysqli_fetch_array($result_warranties)) {
+			$num_days_remaining = date("d", strtotime($row['end_date']) - strtotime("today"));
+			$letter_s = "s";
+			
+			$message .= '<li style="padding-left: 30px;">In '.$num_days_remaining.' day'.$letter_s.', <a href="/search.php/?id='.$row['id'].'">'.$row['product_name'].'</a> will expire.</li>';
+		}
+		$message .= '
+			</ul>
+			<p>To learn more you may click on a specific warranty or click here to see all <a href="/?date_range=60">near expiring warranties</a>.</p>
+			<p>Thank you.</p>
+			<p>&nbsp;</p>';
+		
+		
 	}
 ?>

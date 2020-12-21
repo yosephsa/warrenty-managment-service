@@ -1,0 +1,433 @@
+
+
+body {
+	
+}
+
+.setup_wrapper {
+    position: absolute;
+	width: 500px;
+	height: 400px;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	margin: -200px 0 0 -250px;
+	background: #f2f2f2;
+	border: solid 2px;
+	border-color: gray;
+	border-radius: 10px;
+}
+
+.setup_wrapper .header {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	
+	
+}
+.setup_wrapper .header p{
+	font-size: 1.8em;
+	margin: 0.5em;
+}
+
+.setup_wrapper .body_wrapper {
+	margin: 2px;
+	width: 496px;
+	height: 333px;
+}
+
+.setup_wrapper .body_wrapper .body{
+	margin: 2%;
+	width: 96%;
+	height: 96%;
+}
+
+.setup_wrapper .body_wrapper .body .license {
+	overflow: hidden;
+	overflow-y: scroll;
+	width: 100%;
+	height: 60%;
+}
+
+.setup_wrapper .body_wrapper .body .content {
+	float: center;
+	margin: auto;
+	width: 90%;
+}
+
+.setup_wrapper .body_wrapper .content table {
+	
+}
+.setup_wrapper .body_wrapper .content table th {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-right: 1em;
+	
+}
+
+.setup_wrapper .body_wrapper .content table text {
+	float: left;
+	font-weight: normal;
+}
+
+.wrapper {
+	width: 100% - 2em;
+	height: 100% - 2em;
+	padding: 2vh;
+	margin: auto;
+	background-color: #f1f1f1;
+}
+
+
+ /** Menu CSS code below. */
+
+.menu {
+	position: relative;
+	height: 94vh;
+	min-height: 34em;
+	width: 15vw;
+	min-width: 8em;
+    background-color: #c27d16;
+	float: left;
+	border: solid 3px;
+	border-color: black; 
+	margin: 4px;
+	padding-right: 1em;
+}
+ 
+
+.menu img {
+	width: 80%;
+	padding: 1em;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.menu li a {
+	font-size: 1.3em;
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+	margin: 0.7em;
+    text-decoration: none;
+}
+
+.menu li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.menu li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+
+ /** Search Bar CSS code below. */
+.search {
+	float: left;
+	background: #c27d16;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	//height: relative;
+	width: 100%;
+	max-width: 79%;
+	border: solid 3px;
+	//border-left: 0;
+	border-color: gray;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.search table {
+	margin-top: 0.5em;
+	margin-right: 1em;
+}
+
+.search th label{
+	font-weight: normal;
+	float:  right;
+}
+
+.search .content {
+	padding: 1em;
+	float: left;
+}
+
+
+.search .content .name {
+	margin: 5px;
+}
+
+.search .content .owner {
+	margin: 5px;
+}
+
+.search .content .date_range {
+	margin: 5px;
+}
+
+.search .verticalLine {
+	float: left;
+	height: 100%;
+}
+
+.search .submission {
+	position: relative;
+	height: 100%;
+	float: right;
+	padding: 2em;
+}
+
+.search .submission .result_amount {
+	padding-bottom: 1em;
+}
+
+.search .submission .result_amount input {
+	width: 2em;
+}
+
+/** Body Content */
+.body_content {
+	margin: auto;
+	padding: 1em;
+	overflow: hidden;
+	height: 100%;
+	width: 65vw;
+	border: solid 1px;
+	border-color: black;
+}
+
+/** Entry Brief Content CSS Code*/
+.entry_brief {
+	overflow: hidden;
+	width: 100% - 3em;
+	height: 3em;
+	padding: 1em;
+	border: solid 1px;
+	border-color: black;
+	margin: auto;
+	margin-top: 1em;
+	background: #e6e6e6;
+}
+.entry_brief a {
+	text-decoration: none;
+    color: #236672;
+}
+
+.entry_brief .content {
+	float: left;
+}
+
+.entry_brief .content .title {
+	padding: 3px;
+	color: #404040;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.entry_brief .content .title a {
+    text-decoration: none;
+}
+ 
+
+.entry_brief .content .details {
+	margin: auto;
+	font-size: 1em;
+	padding-top: 0.2em;
+	padding-left: 1em;
+}
+
+.entry_brief .date {
+	float: right;
+}
+
+/** For both up and down*/
+.title a {
+	text-decoration: none;
+}
+.title a.active {
+    color: #23722f;
+}
+.title a.pending {
+    color: #ffa500;
+}
+.title a.near_expired {
+    color: red;
+}
+.title a.expired {
+    color: #722f23;
+}
+.title a.canceled {
+	color: brown;
+	text-decoration: line-through;
+}
+/** Entry Content CSS Code*/
+.entry {
+	overflow: hidden;
+	width: 100% - 3em;
+	height: 100%;
+	min-height: 50vh;
+	padding: 1em;
+	border: solid 1px;
+	border-color: black;
+	margin: auto;
+	margin-top: 1em;
+	background: #e6e6e6;
+}
+.entry a {
+	text-decoration: none;
+    color: #236672;
+}
+
+.entry .content {
+	float: left;
+	width: 100%;
+}
+
+.entry .content .header {
+	width: 100%;
+	overflow: hidden;
+}
+
+.entry .content .header .title {
+	padding: 3px;
+	color: #404040;
+	font-size: 1.2em;
+	font-weight: bold;
+	float: left;
+}
+
+.entry .content .header .title date{
+	height: 1.2em;
+}
+
+.entry .content .header .title input{
+	height: 1.2em;
+	width: 25em;
+}
+
+.entry .content .header .date {
+	float:right;
+	padding: 0.3em;
+}
+
+.entry .content .header .title a {
+    text-decoration: none;
+}
+
+.entry .content .details {
+	margin: auto;
+	font-size: 1em;
+	padding-top: 0.2em;
+	padding-left: 1em;
+}
+
+.entry .content .details text.active {
+    color: darkgreen;
+}
+.entry .content .details text.pending {
+    color: orange;
+}
+.entry .content .details text.near_expired {
+    color: red;
+}
+.entry .content .details text.expired {
+    color: red;
+}
+.entry .content .details text.canceled {
+	color: red;
+}
+
+.entry .content .details .notes_wrapper{
+	background: white;
+	margin: auto;
+	height: 100%
+}
+.entry .content .details textarea.notes{
+	width: 90%;
+	height: 100%;
+	background: white;
+}
+
+.entry .content .details textarea {
+	height: 1em;
+	min-width: 20em;
+}
+#pending_notes{
+    display:none;
+}
+.entry .content .details .pending_notes{
+	background: white;
+	min-height: 75px;
+	padding: 10px;
+	padding-left: 1em;
+	padding-right: 1em;
+	
+}
+
+.entry .content .details .contact_info{
+	background: white;
+	min-height: 75px;
+	padding: 10px;
+	padding-left: 1em;
+	padding-right: 1em;
+	
+}
+
+/** Control_Menu CSS Code */
+.control_menu {
+	float: left;
+	background: #c27d16;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	//height: relative;
+	width: 73%;
+	border: solid 4px;
+	//border-left: 0;
+	border-color: gray;
+	padding: 1em;
+	margin-top: 4px;
+	margin-bottom: 1em;
+}
+
+.control_menu .access_info {
+	float: left;
+}
+
+.control_menu .access_info input{
+	width: 100%;
+}
+
+.control_menu .access_info th label{
+	font-weight: normal;
+}
+
+
+
+.control_menu .actions {
+	float: right;
+}
+
+/** Edit/Create User CSS code below */
+table.user_name th{
+	float:left;
+	width: 8em;
+	font-weight: normal;
+}
+table.user_name input{
+	width: 8em;
+}
+
+/** Misc CSS code below */
+.verticalLine {
+	border-left: thick solid #8c8c8c;
+}
