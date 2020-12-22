@@ -127,6 +127,10 @@
 							} else {
 								$title_css = "active";
 							}
+							include_once "Hijri_GregorianConvert.class";
+							$DateConv=new Hijri_GregorianConvert;
+							$format="YYYY-MM-DD";
+							$date = date("Y/m/d", strtotime("+1 days", strtotime($end_date)));
 							echo "<div class=\"entry_brief\">
 								<div class=\"content\">
 									<div class=\"title\">
@@ -137,7 +141,7 @@
 									</div>
 								</div>
 								<div class=\"date\">
-									<text>".date($prefs['date_format'], strtotime($end_date))."</text>
+									<text>".date($prefs['date_format'], strtotime($end_date))." <br/> <label style=\"color: darkblue;\">".$DateConv->GregorianToHijri($date,$format)."</label> </text>
 								</div>
 							</div>";
 							$i = $i + 1;
