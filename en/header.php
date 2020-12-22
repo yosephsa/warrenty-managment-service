@@ -25,3 +25,6 @@
 		<li><a href="settings.php">Settings</a></li>
 	</ul>
 </div>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/links.html';
+?>

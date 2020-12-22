@@ -24,3 +24,8 @@
 		<li><a href="settings.php">الإعدادات &nbsp;</a></li>
 	</ul>
 </div>
+<div style="float: right;">
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/links.html';
+?>
+</div>
