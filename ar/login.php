@@ -58,7 +58,7 @@
 					<tr>
 						<th><input type="submit" value="تسجيل خروج" name="logout"/></th>
 						<th>'.$_SESSION['first_name'].'</th>
-						<th><label> اهلن</label></th>
+						<th><label> أهلا</label></th>
 						
 						
 						

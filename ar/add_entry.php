@@ -52,7 +52,7 @@
 					include_once 'login.php';
 					?>
 					<div class="actions">
-						<input type="submit" value="إحفض" name="save"/>
+						<input type="submit" value="احفظ" name="save"/>
 						<input type="submit" value="ارجع" name="back"/>
 					</div>
 				</div>

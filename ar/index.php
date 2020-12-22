@@ -42,7 +42,7 @@
 				<div class="submission">
 					<input type="submit" name="submit" value="أعرض" onClick="location.reload(false);" id="submit" />
 					<input type="text" name="result_amount" id="result_amount" value="30" style="width: 2em;"/> 
-					<label>عرض اضمنات</label>
+					<label>عرض الضمانات</label>
 				</div>
 			</form>
 			<div class="body_content">

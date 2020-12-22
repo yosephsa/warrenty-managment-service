@@ -46,8 +46,8 @@
 					include_once 'login.php';
 					?>
 					<div class="actions">
-						<input type="submit" value="Create" name="create"/>
-						<input type="submit" value="Cancel" name="cancel"/>
+						<input type="submit" value="احفظ" name="create"/>
+						<input type="submit" value="ارجع" name="cancel"/>
 					</div>
 				</div>
 				<?php
@@ -97,8 +97,8 @@
 							</div>
 							<div class="actions" style="padding-top: 1em;">
 								<br/><hr/><br/>
-								<input type="submit" value="Create" name="create"/>
-								<input type="submit" value="Cancel" name="cancel"/>
+								<input type="submit" value="احفظ" name="create"/>
+								<input type="submit" value="ارجع" name="cancel"/>
 							</div>
 						</div>
 					</div>
@@ -108,7 +108,7 @@
 						</script>
 					';
 						if(isset($_POST['cancel'])) {
-							echo '<script type="text/javascript">window.location.assign("/index.php");</script>';
+							echo '<script type="text/javascript">window.location.assign("/index.html");</script>';
 						}
 						if(isset($_POST['create'])) {
 							//Include necessaru files.
