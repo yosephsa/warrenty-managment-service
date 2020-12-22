@@ -87,6 +87,7 @@ body {
 	height: 94vh;
 	min-height: 34em;
 	width: 15vw;
+	max-width: 10em;
 	min-width: 8em;
     background-color: #c27d16;
 	float: left;
