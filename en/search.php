@@ -83,7 +83,7 @@
 								$date_range = bbhp($_GET['date_range']);
 							}
 							$created_by = "";
-							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by);
+							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by, true);
 							while($row = mysqli_fetch_array($result))
 								$result_array[] = $row;
 							

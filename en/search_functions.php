@@ -1,5 +1,5 @@
 <?php
-function search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by) {
+function search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by, $desc) {
 	include_once 'mysql_connect.php';
 	include_once 'constants.php';
 	$link = connectDatabase();
@@ -70,8 +70,12 @@ function search_warranties($id, $warranty_id, $product_name, $company_name, $sta
 	$and = "AND";
 	if($search_fields == "" || $single_search == "")
 		$and = "";
-	
-	$query = "SELECT * FROM ".$prefs['mysql_table_warranties']." WHERE ".$single_search." ".$and." ".$search_fields." ORDER BY end_date DESC";
+	if($desc == false) {
+		$desc = "ASC";
+	} else {
+		$desc = "DESC";
+	}
+	$query = "SELECT * FROM ".$prefs['mysql_table_warranties']." WHERE ".$single_search." ".$and." ".$search_fields." ORDER BY end_date ".$desc."";
 	//echo $query;
 	$result_set = db_query($link, "Anonymous", $query);
 	mysqli_close($link);
