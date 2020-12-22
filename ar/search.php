@@ -83,7 +83,7 @@
 								$date_range = bbhp($_GET['date_range']);
 							}
 							$created_by = "";
-							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by);
+							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by, true);
 							while($row = mysqli_fetch_array($result))
 								$result_array[] = $row;
 							
@@ -106,6 +106,11 @@
 								} else {
 									$title_css = "active";
 								}
+								include_once "Hijri_GregorianConvert.class";
+								$DateConv=new Hijri_GregorianConvert;
+								$format="YYYY-MM-DD";
+								$hsdate = date("Y/m/d", strtotime("+1 days", strtotime($row['start_date'])));
+								$hedate = date("Y/m/d", strtotime("+1 days", strtotime($row['end_date'])));
 								
 								echo '
 								<div class="entry">
@@ -119,7 +124,11 @@
 											<p style="float: right;"><text style="float: right">:الحاله </text>
 												<text class="'.$title_css.'">'.strtoupper($title_css).'</text>
 											</p><br/><br/>
-											<p style="float: right;"><text style="float: right">:من تاريخ </text> <input style="background: lightgray;" type="text" name="end_date" id="end_date" value="'.date($prefs['date_format'], strtotime($row['end_date'])).'"readonly/> الى تاريخ <input style="background: lightgray;" type="text" name="start_date" id="start_date" value="'.date($prefs['date_format'], strtotime($row['start_date'])).'"readonly/></p><br/>
+											<p>
+											<label style="float: right;"><text style="float: right">:من تاريخ </text> <input style="background: lightgray;" type="text" name="end_date" id="end_date" value="'.date($prefs['date_format'], strtotime($row['end_date'])).'"readonly/> الى تاريخ <input style="background: lightgray;" type="text" name="start_date" id="start_date" value="'.date($prefs['date_format'], strtotime($row['start_date'])).'"readonly/></label><br/>
+											
+											<label style="float: right;"><text style="float: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text> <input style="background: lightgray; color: darkred;" type="text" name="end_date" id="end_date" value="'.$DateConv->GregorianToHijri($hedate,$format).'"readonly/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input style="background: lightgray; color: darkred;" type="text" name="start_date" id="start_date" value="'.$DateConv->GregorianToHijri($hsdate,$format).'"readonly/></label><br/>
+											</p>
 											<br/><br/><br/><p style="float: right;"><text style="float: right">:المبلغ </text> <input style="background: lightgray;" type="text" name="price" value="'.$row['price'].'"></input></p><br/>
 											<br/><br/><br/>
 											<p style="float: right;"><div id="pending_notes"><p>Pending Notes:</p> <text name="pending_notes" class="pending_notes">'.$row['pending_notes'].'</text></div></p><br/>
@@ -132,7 +141,6 @@
 										if(strpos($row['files'], ":") !== false) {
 											$files = explode(":",  $row['files']);
 										} else if($row['files'] != "") {
-											echo $row['files'];
 											$files = array($row['files']);
 										}
 										if(isset($files)) {

@@ -89,7 +89,7 @@
 							$date_range = "";
 							$created_by = "";
 							
-							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by);
+							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by, true);
 							if(!$result || mysqli_num_rows($result) <= 0) {
 								echo '<script>alert("لا يوجد الضمان")</script>';
 								goto end_if_987;
@@ -138,7 +138,7 @@
 							$date_range = "";
 							$created_by = "";
 							
-							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by);
+							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by, true);
 							if(!$result || mysqli_num_rows($result) <= 0) {
 								echo '<script>alert("لا يوجد الضمان")</script>';
 								goto end_if_989;
@@ -246,7 +246,7 @@
 							if(isset($_POST['warranty_id'])) {
 								echo "<script type='text/javascript'>window.location.assign('search.php?warranty_id=".bbhp($_POST['warranty_id'])."')</script>";
 							} else {
-								$result = search_warranties(bbhp($_GET['id']), "" , "", "", "", "", "", "", "", "", "");
+								$result = search_warranties(bbhp($_GET['id']), "" , "", "", "", "", "", "", "", "", "", true);
 								$warranty = mysqli_fetch_array($result);
 								echo "<script type='text/javascript'>window.location.assign('search.php?warranty_id=".bbhp($warranty['warranty_id'])."')</script>";
 							}
@@ -259,7 +259,7 @@
 							$prefs = get_preferences();
 							$link = connectDatabase();
 							if(isset($_SESSION['status']) && $_SESSION['status'] == 1) {
-								$result_set = search_warranties("", bbhp($_GET['warranty_id']), "", "", "", "", "", "", "", "", "");
+								$result_set = search_warranties("", bbhp($_GET['warranty_id']), "", "", "", "", "", "", "", "", "", true);
 								$warranty_id = bbhp($_GET['warranty_id']);
 								$id = mysqli_fetch_array($result_set)['id'];
 								if(!is_numeric($id)) {

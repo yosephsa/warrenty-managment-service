@@ -123,7 +123,9 @@
 										<div class="details"><br/>
 											<p> Status: <text class="'.$title_css.'">'.strtoupper($title_css).'</text><label style="float: right;"><input type="button" onClick="location.href=\'edit_warranty.php?id='.$row['id'].'\'")" value="Edit Entry" /></label></p><br/>
 											'.$pending_notes.'
-											<p> Warranty Period: <text style="padding-left: 2em; color: #000066;">'.date($prefs['date_format'], strtotime($row['start_date'])). ' ('.$DateConv->GregorianToHijri($hsdate,$format).')</text> to <text style="color: #000066;">' .date($prefs['date_format'], strtotime($row['end_date'])).' ('.$DateConv->GregorianToHijri($hedate,$format).')</text></p><br/>
+											<p> Warranty Period: <text style="padding-left: 2em; color: #000066;">'.date($prefs['date_format'], strtotime($row['start_date'])). '</text> to <text style="color: #000066;">' .date($prefs['date_format'], strtotime($row['end_date'])).'</text><br/>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<text style="padding-left: 2em; color: darkred;">'.$DateConv->GregorianToHijri($hsdate,$format).'</text> &nbsp;&nbsp; <text style="color: darkred;">'.$DateConv->GregorianToHijri($hedate,$format).'</text></p><br/>
 											<p> Price: '.$row['price'].' '.$prefs['currency'].'</p><br/>
 											<p><label class="clickableLabel" onClick="toggleDisplay(\'contact_info'.$row['id'].'\')"> Contact Info: </label><div id="contact_info'.$row['id'].'" style="padding-left: 2em;">'.$row['contact_info'].'</div> </p><br/>
 											<p><label class="clickableLabel" onClick="toggleDisplay(\'notes'.$row['id'].'\')"> Notes: </label><div id="notes'.$row['id'].'" style=" padding-left: 1em;">'.$row['notes'].'</div> </p><br/>

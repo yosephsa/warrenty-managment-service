@@ -105,7 +105,7 @@
 						include_once 'search_functions.php';
 						include_once 'constants.php';
 						$prefs = get_preferences();
-						$result_set = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by);
+						$result_set = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by, true);
 						$i = 0;
 						while(($row = mysqli_fetch_array($result_set)) && $i < $result_amount) {
 							$id = $row['warranty_id'];
@@ -130,6 +130,11 @@
 							} else {
 								$title_css = "active";
 							}
+							include_once "Hijri_GregorianConvert.class";
+							$DateConv=new Hijri_GregorianConvert;
+							$format="YYYY-MM-DD";
+							$date = date("Y/m/d", strtotime("+1 days", strtotime($row['start_date'])));
+							
 							echo "<div class=\"entry_brief\">
 								<div class=\"content\">
 									<div class=\"title\">
@@ -140,7 +145,7 @@
 									</div>
 								</div>
 								<div class=\"date\">
-									<text>".date($prefs['date_format'], strtotime($end_date))."</text>
+									<text>".date($prefs['date_format'], strtotime($end_date))." <br/><label style=\"color: darkred;\">".$DateConv->GregorianToHijri($date,$format)."</label></text>
 								</div>
 							</div>";
 							$i = $i + 1;

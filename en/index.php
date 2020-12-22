@@ -141,7 +141,7 @@
 									</div>
 								</div>
 								<div class=\"date\">
-									<text>".date($prefs['date_format'], strtotime($end_date))." <br/> <label style=\"color: darkblue;\">".$DateConv->GregorianToHijri($date,$format)."</label> </text>
+									<text>".date($prefs['date_format'], strtotime($end_date))." <br/> <label style=\"color: darkred;\">".$DateConv->GregorianToHijri($date,$format)."</label> </text>
 								</div>
 							</div>";
 							$i = $i + 1;

@@ -78,7 +78,7 @@
 							$date_range = "";
 							$created_by = "";
 							
-							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by);
+							$result = search_warranties($id, $warranty_id, $product_name, $company_name, $status, $pending_notes, $price, $contact_info, $notes, $date_range, $created_by, true);
 							if(!$result || mysqli_num_rows($result) <= 0) {
 								echo '<script>alert("No such warranty Exists")</script>';
 								goto end_if_987;
