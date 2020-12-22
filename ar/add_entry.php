@@ -109,7 +109,7 @@
 												</select>
 											</p>
 											<br/><br/><br/><br/><p style="float: right;"><div id="pending_notes"><p style="padding-left: 80%">:ملاحضات الحالة</p><textarea name="pending_notes" class="pending_notes">'.$warranty['pending_notes'].'</textarea></div></p><br/>
-											<p style="float: right;"><div id="contact_info"><p style="float: right;">:معلمات التواصل</p> <textarea name="contact_info" class="contact_info">'.$warranty['contact_info'].'</textarea></div>
+											<p style="float: right;"><div id="contact_info"><p style="float: right;">:معلومات التواصل</p><br/><br/><br/><br/> <textarea name="contact_info" class="contact_info">'.$warranty['contact_info'].'</textarea></div>
 											<p style="float: right;"><div class="notes"><p style="float: right;">:ملحظات</p><br/><br/><br/><textarea name="notes" id="notes" class="notes">'.$warranty['notes'].'</textarea></div></p><br/>
 										';
 										if (strpos($warranty['files'], ":") == 0)
@@ -117,18 +117,18 @@
 										if(strpos($warranty['files'], ":") !== false) {
 											$files = explode(":",  $warranty['files']);
 										} else if($warranty['files'] != "") {
-											//echo $warranty['files'];
 											$files = array($warranty['files']);
 										}
 										if(isset($files)) {
 											echo '<label><input type="hidden" name="include_files[]" value="-"/></label>';
-											echo '<p> Include Files: </p> <div style="padding-left: 2em">';
+											echo '<p style="float: right;"> :إظافت الملفات </p> <div style="padding-left: 2em">';
+											echo "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
 											$j = 0;
 											while($j < count($files)) {
 												if($files[$j] != "") {
 													if($j != 0)
 														echo ', ';
-													echo '<label><input type="checkbox" name="include_files[]" value="'.$files[$j].'"/>'.substr($files[$j], strrpos($files[$j], '/') + 1).'</label>';
+													echo '<label style="float: right;"><input type="checkbox" name="include_files[]" value="'.$files[$j].'"/>'.substr($files[$j], strrpos($files[$j], '/') + 1).'</label>';
 												}
 												$j++;
 											}
